@@ -1,0 +1,59 @@
+﻿@model IEnumerable<CocoApi.Models.time>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Times</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.van_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time_order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.time1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time_order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.time1)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.time_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.time_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.time_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

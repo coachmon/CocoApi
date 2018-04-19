@@ -1,0 +1,82 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <style>
+        #home {
+            background-image: url("Content/img/bcg.jpg");
+            background-repeat: no-repeat;
+            background-position: right top;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("CocoApi-EnET C", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("API", "Index", "Help", new { area = "" }, null)</li>
+                    @*<li>@Html.ActionLink("DRIVER", "Index", "Driversweb", new { area = "" }, null)</li>
+                    <li>@Html.ActionLink("DEPOTS", "Index", "Depotsweb", new { area = "" }, null)</li>*@
+                    <li style="margin-top: 5px"><button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                        Manage Table
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu">
+                        @*<li><a href="#">HTML</a></li>
+                        <li><a href="#">CSS</a></li>
+                        <li><a href="#">JavaScript</a></li>*@
+                        <li>@Html.ActionLink("news", "Index", "newsM", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("supports", "Index", "supportsM", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("times", "Index", "timesM", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("users", "Index", "usersM", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("vans", "Index", "vansM", new { area = "" }, null)</li>
+                        <li>@Html.ActionLink("waypoint", "Index", "waypointsM", new { area = "" }, null)</li>
+                    </ul></li>
+                </ul>
+               
+            </div>
+           
+        </div>
+        @*<div class="dropdown">
+            <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+                Dropdown Example
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li><a href="#">HTML</a></li>
+                <li><a href="#">CSS</a></li>
+                <li><a href="#">JavaScript</a></li>
+            </ul>
+        </div>*@
+    </div>
+    @*<div class="container body-content">*@
+        @*container body-content*@
+        @RenderBody()
+        @*<hr />
+    <footer>
+        <p>&copy; @DateTime.Now.Year - CocoApi -EnET C</p>
+    </footer>*@
+    @*</div>*@
+
+    @*@Scripts.Render("~/bundles/jquery")*@
+    @*@Scripts.Render("~/bundles/bootstrap")*@
+    @RenderSection("scripts", required: false)
+</body>
+</html>

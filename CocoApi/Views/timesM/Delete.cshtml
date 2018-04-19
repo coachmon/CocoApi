@@ -1,0 +1,66 @@
+﻿@model CocoApi.Models.time
+
+@{
+    ViewBag.Title = "Delete";
+}
+<div class="container body-content">
+    <h2>Delete</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <div>
+        <h4>time</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.van_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time_order)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time_order)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Delete" class="btn btn-default" /> |
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        }
+    </div>
+    </div>

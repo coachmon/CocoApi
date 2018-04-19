@@ -1,0 +1,59 @@
+﻿@model CocoApi.Models.time
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>time</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.van_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time_order)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time_order)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.time1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.time1)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.time_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

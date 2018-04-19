@@ -1,0 +1,155 @@
+﻿@model CocoApi.Models.van
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>van</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_start)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_start)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_stop)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_stop)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_license)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_license)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_license_prov)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_license_prov)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_type)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_type)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_free)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_free)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_seat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_seat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_driver)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_driver)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_phone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_phone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_status)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_status)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_comment)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_comment)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.van_img)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_img)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.edit_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.edit_date)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.van_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

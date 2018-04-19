@@ -1,0 +1,53 @@
+﻿@model IEnumerable<CocoApi.Models.news>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>News</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.news_topic)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.news_details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.news_topic)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.news_details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.news_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.news_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.news_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

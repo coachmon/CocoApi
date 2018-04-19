@@ -1,0 +1,131 @@
+﻿@model IEnumerable<CocoApi.Models.van>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Vans</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.user_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_start)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_stop)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_license)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_license_prov)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_type)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_free)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_seat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_driver)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_phone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_comment)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.van_img)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.edit_date)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.user_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_start)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_stop)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_license)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_license_prov)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_type)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_free)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_seat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_driver)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_phone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_status)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_comment)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_img)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.edit_date)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.van_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.van_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.van_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

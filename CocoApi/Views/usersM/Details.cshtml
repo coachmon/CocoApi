@@ -1,0 +1,83 @@
+﻿@model CocoApi.Models.user
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>user</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.user_username)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_username)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_password)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_password)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_firstname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_firstname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_lastname)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_lastname)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_email)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_email)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.user_priority)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.user_priority)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.user_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

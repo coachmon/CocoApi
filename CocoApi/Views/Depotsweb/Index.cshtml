@@ -1,0 +1,71 @@
+﻿@model IEnumerable<CocoApi.Models.Depot>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Manage Depots</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.zone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.latitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.longtitude)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.route)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waypoint)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.code)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.zone)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.latitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.longtitude)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.route)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.waypoint)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.code)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

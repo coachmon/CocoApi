@@ -1,0 +1,47 @@
+﻿@model IEnumerable<CocoApi.Models.support>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Supports</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.support_details)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.support_details)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.support_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.support_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.support_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

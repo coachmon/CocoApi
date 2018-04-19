@@ -1,0 +1,75 @@
+﻿@model CocoApi.Models.Depot
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>Depot</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.name)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.zone)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.zone)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.latitude)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.latitude)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.longtitude)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.longtitude)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.route)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.route)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.waypoint)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.waypoint)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.code)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.code)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

@@ -1,0 +1,65 @@
+﻿@model IEnumerable<CocoApi.Models.waypoint>
+
+@{
+    ViewBag.Title = "Index";
+}
+<div class="container body-content">
+    <h2>Waypoints</h2>
+
+    <p>
+        @Html.ActionLink("Create New", "Create")
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.van_id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waypoint_order)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waypoint_lat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.waypoint_lng)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.add_id)
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.van_id)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.waypoint_order)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.waypoint_lat)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.waypoint_lng)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_date)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.add_id)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.waypoint_id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.waypoint_id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.waypoint_id })
+                </td>
+            </tr>
+        }
+
+    </table>
+    </div>

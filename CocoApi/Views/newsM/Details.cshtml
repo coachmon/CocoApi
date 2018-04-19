@@ -1,0 +1,51 @@
+﻿@model CocoApi.Models.news
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>news</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.news_topic)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.news_topic)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.news_details)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.news_details)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.news_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+    </div>

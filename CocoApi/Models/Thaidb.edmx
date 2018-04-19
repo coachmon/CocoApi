@@ -1,0 +1,301 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="thai_dbModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="news_id" />
+          </Key>
+          <Property Name="news_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="news_topic" Type="varchar" MaxLength="255" />
+          <Property Name="news_details" Type="text" Nullable="false" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" />
+        </EntityType>
+        <EntityType Name="support">
+          <Key>
+            <PropertyRef Name="support_id" />
+          </Key>
+          <Property Name="support_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="support_details" Type="text" Nullable="false" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="times">
+          <Key>
+            <PropertyRef Name="time_id" />
+          </Key>
+          <Property Name="time_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="van_id" Type="int" Nullable="false" />
+          <Property Name="time_order" Type="int" />
+          <Property Name="time" Type="varchar" MaxLength="5" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="users">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_username" Type="varchar" MaxLength="16" />
+          <Property Name="user_password" Type="varchar" MaxLength="32" />
+          <Property Name="user_firstname" Type="varchar" MaxLength="50" />
+          <Property Name="user_lastname" Type="varchar" MaxLength="50" />
+          <Property Name="user_email" Type="varchar" MaxLength="100" />
+          <Property Name="user_priority" Type="int" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="vans">
+          <Key>
+            <PropertyRef Name="van_id" />
+          </Key>
+          <Property Name="van_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="user_id" Type="int" />
+          <Property Name="van_start" Type="varchar" MaxLength="255" />
+          <Property Name="van_stop" Type="varchar" MaxLength="255" />
+          <Property Name="van_license" Type="varchar" MaxLength="32" />
+          <Property Name="van_license_prov" Type="int" />
+          <Property Name="van_type" Type="binary" MaxLength="1" />
+          <Property Name="van_free" Type="decimal" Precision="6" Scale="0" />
+          <Property Name="van_seat" Type="int" />
+          <Property Name="van_driver" Type="varchar" MaxLength="200" />
+          <Property Name="van_phone" Type="varchar" MaxLength="10" />
+          <Property Name="van_details" Type="text" Nullable="false" />
+          <Property Name="van_status" Type="varchar" MaxLength="1" />
+          <Property Name="van_comment" Type="text" Nullable="false" />
+          <Property Name="van_img" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" Nullable="false" />
+          <Property Name="edit_date" Type="datetime" Nullable="false" />
+        </EntityType>
+        <EntityType Name="waypoint">
+          <Key>
+            <PropertyRef Name="waypoint_id" />
+          </Key>
+          <Property Name="waypoint_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="van_id" Type="int" Nullable="false" />
+          <Property Name="waypoint_order" Type="int" />
+          <Property Name="waypoint_lat" Type="varchar" MaxLength="20" />
+          <Property Name="waypoint_lng" Type="varchar" MaxLength="20" />
+          <Property Name="add_date" Type="datetime" />
+          <Property Name="add_id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="thai_dbModelStoreContainer">
+          <EntitySet Name="news" EntityType="Self.news" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="support" EntityType="Self.support" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="times" EntityType="Self.times" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vans" EntityType="Self.vans" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="waypoint" EntityType="Self.waypoint" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="thai_dbModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="news">
+          <Key>
+            <PropertyRef Name="news_id" />
+          </Key>
+          <Property Name="news_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="news_topic" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="news_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" />
+        </EntityType>
+        <EntityType Name="support">
+          <Key>
+            <PropertyRef Name="support_id" />
+          </Key>
+          <Property Name="support_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="support_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="time">
+          <Key>
+            <PropertyRef Name="time_id" />
+          </Key>
+          <Property Name="time_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="van_id" Type="Int32" Nullable="false" />
+          <Property Name="time_order" Type="Int32" />
+          <Property Name="time1" Type="String" MaxLength="5" FixedLength="false" Unicode="false" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="user">
+          <Key>
+            <PropertyRef Name="user_id" />
+          </Key>
+          <Property Name="user_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_username" Type="String" MaxLength="16" FixedLength="false" Unicode="false" />
+          <Property Name="user_password" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="user_firstname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_lastname" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="user_email" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="user_priority" Type="Int32" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="van">
+          <Key>
+            <PropertyRef Name="van_id" />
+          </Key>
+          <Property Name="van_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="user_id" Type="Int32" />
+          <Property Name="van_start" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="van_stop" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="van_license" Type="String" MaxLength="32" FixedLength="false" Unicode="false" />
+          <Property Name="van_license_prov" Type="Int32" />
+          <Property Name="van_type" Type="Binary" MaxLength="1" FixedLength="true" />
+          <Property Name="van_free" Type="Decimal" Precision="6" Scale="0" />
+          <Property Name="van_seat" Type="Int32" />
+          <Property Name="van_driver" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="van_phone" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="van_details" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="van_status" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="van_comment" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="van_img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" Nullable="false" />
+          <Property Name="edit_date" Type="DateTime" Nullable="false" Precision="3" />
+        </EntityType>
+        <EntityType Name="waypoint">
+          <Key>
+            <PropertyRef Name="waypoint_id" />
+          </Key>
+          <Property Name="waypoint_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="van_id" Type="Int32" Nullable="false" />
+          <Property Name="waypoint_order" Type="Int32" />
+          <Property Name="waypoint_lat" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="waypoint_lng" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="add_date" Type="DateTime" Precision="3" />
+          <Property Name="add_id" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="thai_dbEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="news" EntityType="Self.news" />
+          <EntitySet Name="supports" EntityType="Self.support" />
+          <EntitySet Name="times" EntityType="Self.time" />
+          <EntitySet Name="users" EntityType="Self.user" />
+          <EntitySet Name="vans" EntityType="Self.van" />
+          <EntitySet Name="waypoints" EntityType="Self.waypoint" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="thai_dbModelStoreContainer" CdmEntityContainer="thai_dbEntities">
+          <EntitySetMapping Name="news">
+            <EntityTypeMapping TypeName="thai_dbModel.news">
+              <MappingFragment StoreEntitySet="news">
+                <ScalarProperty Name="news_id" ColumnName="news_id" />
+                <ScalarProperty Name="news_topic" ColumnName="news_topic" />
+                <ScalarProperty Name="news_details" ColumnName="news_details" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="supports">
+            <EntityTypeMapping TypeName="thai_dbModel.support">
+              <MappingFragment StoreEntitySet="support">
+                <ScalarProperty Name="support_id" ColumnName="support_id" />
+                <ScalarProperty Name="support_details" ColumnName="support_details" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="times">
+            <EntityTypeMapping TypeName="thai_dbModel.time">
+              <MappingFragment StoreEntitySet="times">
+                <ScalarProperty Name="time_id" ColumnName="time_id" />
+                <ScalarProperty Name="van_id" ColumnName="van_id" />
+                <ScalarProperty Name="time_order" ColumnName="time_order" />
+                <ScalarProperty Name="time1" ColumnName="time" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="users">
+            <EntityTypeMapping TypeName="thai_dbModel.user">
+              <MappingFragment StoreEntitySet="users">
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="user_username" ColumnName="user_username" />
+                <ScalarProperty Name="user_password" ColumnName="user_password" />
+                <ScalarProperty Name="user_firstname" ColumnName="user_firstname" />
+                <ScalarProperty Name="user_lastname" ColumnName="user_lastname" />
+                <ScalarProperty Name="user_email" ColumnName="user_email" />
+                <ScalarProperty Name="user_priority" ColumnName="user_priority" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="vans">
+            <EntityTypeMapping TypeName="thai_dbModel.van">
+              <MappingFragment StoreEntitySet="vans">
+                <ScalarProperty Name="van_id" ColumnName="van_id" />
+                <ScalarProperty Name="user_id" ColumnName="user_id" />
+                <ScalarProperty Name="van_start" ColumnName="van_start" />
+                <ScalarProperty Name="van_stop" ColumnName="van_stop" />
+                <ScalarProperty Name="van_license" ColumnName="van_license" />
+                <ScalarProperty Name="van_license_prov" ColumnName="van_license_prov" />
+                <ScalarProperty Name="van_type" ColumnName="van_type" />
+                <ScalarProperty Name="van_free" ColumnName="van_free" />
+                <ScalarProperty Name="van_seat" ColumnName="van_seat" />
+                <ScalarProperty Name="van_driver" ColumnName="van_driver" />
+                <ScalarProperty Name="van_phone" ColumnName="van_phone" />
+                <ScalarProperty Name="van_details" ColumnName="van_details" />
+                <ScalarProperty Name="van_status" ColumnName="van_status" />
+                <ScalarProperty Name="van_comment" ColumnName="van_comment" />
+                <ScalarProperty Name="van_img" ColumnName="van_img" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+                <ScalarProperty Name="edit_date" ColumnName="edit_date" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="waypoints">
+            <EntityTypeMapping TypeName="thai_dbModel.waypoint">
+              <MappingFragment StoreEntitySet="waypoint">
+                <ScalarProperty Name="waypoint_id" ColumnName="waypoint_id" />
+                <ScalarProperty Name="van_id" ColumnName="van_id" />
+                <ScalarProperty Name="waypoint_order" ColumnName="waypoint_order" />
+                <ScalarProperty Name="waypoint_lat" ColumnName="waypoint_lat" />
+                <ScalarProperty Name="waypoint_lng" ColumnName="waypoint_lng" />
+                <ScalarProperty Name="add_date" ColumnName="add_date" />
+                <ScalarProperty Name="add_id" ColumnName="add_id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

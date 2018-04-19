@@ -1,0 +1,67 @@
+﻿@model CocoApi.Models.waypoint
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container body-content">
+    <h2>Details</h2>
+
+    <div>
+        <h4>waypoint</h4>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.van_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.van_id)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.waypoint_order)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.waypoint_order)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.waypoint_lat)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.waypoint_lat)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.waypoint_lng)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.waypoint_lng)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_date)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_date)
+            </dd>
+
+            <dt>
+                @Html.DisplayNameFor(model => model.add_id)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.add_id)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.waypoint_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>
+</div>
